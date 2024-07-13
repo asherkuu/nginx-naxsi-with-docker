@@ -1,0 +1,16 @@
+## Basic rule
+LearningMode;
+
+# Deny URL if it matches
+SecRulesEnabled;
+DeniedUrl "/RequestDenied";
+
+LibInjectionSql; #enable libinjection support for SQLI
+LibInjectionXss; #enable libinjection support for XSS
+
+## check rules 
+CheckRule "$SQL >= 8" BLOCK; 
+CheckRule "$RFI >= 8" BLOCK; 
+CheckRule "$TRAVERSAL >= 4" BLOCK; 
+CheckRule "$EVADE >= 4" BLOCK; 
+CheckRule "$XSS >= 8" BLOCK;
