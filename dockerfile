@@ -103,10 +103,10 @@ COPY --from=build /usr/sbin/nginx /usr/sbin/nginx
 COPY --from=build /usr/lib/nginx /usr/lib/nginx
 
 # Copy custom NGINX and Naxsi configuration files
-COPY ./infra/naxsi/naxsi_core.rules /etc/nginx/naxsi_core.rules
-COPY ./infra/naxsi/naxsi.rules /etc/nginx/naxsi.rules
-COPY ./infra/nginx/nginx.conf /etc/nginx/nginx.conf
-COPY ./infra/nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY naxsi_core.rules /etc/nginx/naxsi_core.rules
+COPY naxsi.rules /etc/nginx/naxsi.rules
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY default.conf /etc/nginx/conf.d/default.conf
 
 # Expose NGINX ports
 EXPOSE 80 443
