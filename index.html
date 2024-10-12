@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XSS Test</title>
+  </head>
+  <body>
+    <h1>XSS Test Page</h1>
+    <form id="userForm">
+      <label for="input">Enter your name:</label>
+      <input type="text" id="input" name="username" />
+      <button type="submit">Submit</button>
+    </form>
+    <div>
+      <h2>Welcome:</h2>
+      <p id="greeting"></p>
+    </div>
+
+    <script>
+      document
+        .getElementById("userForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the default form submission
+          var username = document.getElementById("input").value;
+          document.getElementById("greeting").innerHTML = username; // Directly setting the HTML content
+        });
+    </script>
+  </body>
+</html>

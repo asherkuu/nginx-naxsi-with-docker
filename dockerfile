@@ -107,6 +107,7 @@ COPY naxsi_core.rules /etc/nginx/naxsi_core.rules
 COPY naxsi.rules /etc/nginx/naxsi.rules
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY default.conf /etc/nginx/conf.d/default.conf
+COPY index.html /usr/share/nginx/html/index.html
 
 # Expose NGINX ports
 EXPOSE 80 443

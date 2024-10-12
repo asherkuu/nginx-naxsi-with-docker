@@ -1,7 +1,7 @@
 ## Basic rule
-LearningMode;
+# LearningMode;
 
-# Deny URL if it matches
+## Deny URL if it matches
 SecRulesEnabled;
 DeniedUrl "/RequestDenied";
 
